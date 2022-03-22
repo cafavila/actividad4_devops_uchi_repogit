@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  build: 
+    docker:
+      - image: alpine:3.7
+    steps:
+      - checkout
+      - run:
+          name: Primer Paso
+          command: echo 'Hola Circle' |
+                   echo 'Primer delivery pipeline'
+      - run:
+          name: Segundo Paso
+          command: ls -la |
+                   echo 'Dentro del contenedor FIN'

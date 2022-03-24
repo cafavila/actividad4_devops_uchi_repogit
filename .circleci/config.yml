@@ -11,8 +11,8 @@ jobs:
       - run:
           name: Primer Paso Instalar dependencias
           command: echo 'Instalando....' |
-                   python3 -m venv venv
-                   . venv/bin/activate
+                   python3 -m venv venv |
+                   . venv/bin/activate |
                    pip install -r requeriments.txt
       - run:
           name: Segundo Paso Sale de la ejecucion

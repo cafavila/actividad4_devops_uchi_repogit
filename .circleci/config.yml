@@ -14,8 +14,10 @@ jobs:
                    python3 -m venv venv
       - run:
           name: Segundo Paso - Crear artefacto
-          command: make build
-          path: ./DEPLOY-{CURRENT_DATE}
+          command: make
+      - store_artifacts:
+          path: .
+          destination: ./DEPLOY-{CURRENT_DATE}
       - run:
           name: Tercer Paso - Validar el programa
           command: python3 app.py

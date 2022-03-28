@@ -13,7 +13,8 @@ jobs:
           command: echo 'Instalando....' |
                    python3 -m venv venv
       - run:
-          name: Segundo Paso Sale de la ejecucion
-          command: ls -la |
-                   echo 'Fin de la ejecucion'
+          name: Segundo Paso Ejecucion del programa
+          command: python3 app.py
+
+
 

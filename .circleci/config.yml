@@ -15,9 +15,10 @@ jobs:
       - run:
           name: Segundo Paso - Crear artefacto
           command: make
-      - store_artifacts:
-          path: .
-          destination: ./DEPLOY-{CURRENT_DATE}
+      - persist_to_workspace:
+          root: ./DEPLOY-{CURRENT_DATE}
+          paths:
+            - . 
       - run:
           name: Tercer Paso - Validar el programa
           command: python3 app.py

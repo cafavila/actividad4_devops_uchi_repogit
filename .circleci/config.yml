@@ -3,7 +3,7 @@ jobs:
   build: 
     docker:
       - image: circleci/python:3.7
-    working_directory: ~/devops
+    working_directory: ~/devops/DEPLOY-{$CURRENT_DATE} 
     steps:
       # Traer el repositorio desde github
       - checkout
@@ -15,10 +15,6 @@ jobs:
       - run:
           name: Segundo Paso - Crear artefacto
           command: make
-      - persist_to_workspace:
-          root: .
-          paths:
-            - ./DEPLOY-{$CURRENT_DATE} 
       - run:
           name: Tercer Paso - Validar el programa
           command: python3 app.py

@@ -9,11 +9,14 @@ jobs:
       - checkout
       # Crear el entorno virtual
       - run:
-          name: Primer Paso Instalar dependencias
+          name: Primer Paso - Instalar dependencias
           command: echo 'Instalando....' |
                    python3 -m venv venv
       - run:
-          name: Segundo Paso Ejecucion del programa
+          name: Segundo Paso - Crear artefacto
+          command: make build
+      - run:
+          name: Tercer Paso - Validar el programa
           command: python3 app.py
 
 

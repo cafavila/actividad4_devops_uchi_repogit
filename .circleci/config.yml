@@ -5,7 +5,7 @@ jobs:
       - image: circleci/python:3.7
     working_directory: ~/devops 
     environment:
-      CURRENT_DATE: 'date -u +”%Y%m%d”'
+      CURRENT_DATE: date -u +”%Y%m%d”
     steps:
       # Traer el repositorio desde github
       - checkout
@@ -23,6 +23,6 @@ jobs:
           name: Tercer Paso - Validar el programa
           command: python3 app.py
       - store_artifacts:
-          path: ./DEPLOY-{$CURRENT_DATE}
+          path: ./DEPLOY-${CURRENT_DATE}
 
 

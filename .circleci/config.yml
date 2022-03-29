@@ -23,6 +23,6 @@ jobs:
           name: Tercer Paso - Validar el programa
           command: python3 app.py
       - store_artifacts:
-          path: ./DEPLOY-${CURRENT_DATE}
+          path: ./DEPLOY-"${CURRENT_DATE}"
 
 

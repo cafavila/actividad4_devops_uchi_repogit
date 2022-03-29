@@ -5,7 +5,7 @@ jobs:
       - image: circleci/python:3.7
     working_directory: ~/devops 
     environment:
-      CURRENT_DATE: `date -u +”%Y-%m-%dT%H:%M:%SZ”`
+      CURRENT_DATE: 'date -u +”%Y%m%d”'
     steps:
       # Traer el repositorio desde github
       - checkout
@@ -14,9 +14,11 @@ jobs:
           name: Primer Paso - Instalar dependencias
           command: echo 'Instalando....' |
                    python3 -m venv venv
+      # Crear el artefacto
       - run:
           name: Segundo Paso - Crear artefacto
           command: make
+      # Ejecutar la aplicacion
       - run:
           name: Tercer Paso - Validar el programa
           command: python3 app.py

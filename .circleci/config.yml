@@ -5,7 +5,7 @@ jobs:
       - image: circleci/python:3.7
     working_directory: ~/devops 
     environment:
-      CURRENT_DATE: ”%YYYY%mm%dd”
+      CURRENT_DATE: "20220329"
     steps:
       # Traer el repositorio desde github
       - checkout

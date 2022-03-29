@@ -21,9 +21,8 @@ jobs:
       # Ejecutar la aplicacion
       - run:
           name: Tercer Paso - Validar el programa
-          command: python3 app.py |
-                   echo $CURRENT_DATE
+          command: python3 app.py
       - store_artifacts:
-          path: ./DEPLOY-"$CURRENT_DATE"
+          path: ./DEPLOY-$CURRENT_DATE
 
 

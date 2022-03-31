@@ -14,15 +14,15 @@ jobs:
           name: Primer Paso - Instalar dependencias
           command: echo 'Instalando....' |
                    python3 -m venv venv
-      # Crear el artefacto
+      # Ejecuta las pruebas
+      - run:
+          name: Segundo Paso - Ejecuta las pruebas
+          command: make
+      # Ejecuta prepara el build
       - run:
           name: Segundo Paso - Crear artefacto
           command: make
-      # Ejecutar la aplicacion
-      - run:
-          name: Tercer Paso - Validar el programa
-          command: python3 app.py
       - store_artifacts:
-          path: ./DEPLOY-$CURRENT_DATE
+          path: ./DEPLOY-{$CURRENT_DATE}
 
 
